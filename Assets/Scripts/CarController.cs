@@ -8,6 +8,7 @@ public class AxleInfo {
     public WheelCollider rightWheel;
     public bool motor;
     public bool steering;
+    public float antiRoll;
 }
 
 public class CarController : MonoBehaviour {
@@ -17,17 +18,43 @@ public class CarController : MonoBehaviour {
     public GameObject car_root;
 
     public void Start() {
-        foreach(AxleInfo axleInfo in axleInfos) {
+        foreach (AxleInfo axleInfo in axleInfos) {
             InitLocalPositionToVisuals(axleInfo.leftWheel);
             InitLocalPositionToVisuals(axleInfo.rightWheel);
         }
-        // Awful, awful hack to get the car_root object as a reference I can use to fix steering angle
-        //car_root = transform.parent.gameObject;
-        //car_root = car_root.transform.parent.gameObject;
+    }
+
+    public void AntiRollBar() {
+        foreach(AxleInfo axleInfo in axleInfos) {
+            WheelHit hit;
+            float leftTravel = 1.0f;
+            float rightTravel = 1.0f;
+
+            bool leftWheelGrounded = axleInfo.leftWheel.GetGroundHit(out hit);
+            if (leftWheelGrounded) {
+                leftTravel = (-axleInfo.leftWheel.transform.InverseTransformPoint(hit.point).y - axleInfo.leftWheel.radius) / axleInfo.leftWheel.suspensionDistance;
+            }
+
+            bool rightWheelGrounded = axleInfo.rightWheel.GetGroundHit(out hit);
+            if (rightWheelGrounded) {
+                rightTravel = (-axleInfo.rightWheel.transform.InverseTransformPoint(hit.point).y - axleInfo.rightWheel.radius) / axleInfo.rightWheel.suspensionDistance;
+            }
+
+            float antiRollForce = (leftTravel - rightTravel) * axleInfo.antiRoll;
+
+            if (leftWheelGrounded) {
+                GetComponent<Rigidbody>().AddForceAtPosition(axleInfo.leftWheel.transform.up * -antiRollForce, axleInfo.leftWheel.transform.position);
+            }
+
+            if (rightWheelGrounded) {
+                GetComponent<Rigidbody>().AddForceAtPosition(axleInfo.rightWheel.transform.up * -antiRollForce, axleInfo.rightWheel.transform.position);
+            }
+
+        }
     }
 
     // Initialize wheels to correct orientation
-     public void InitLocalPositionToVisuals(WheelCollider collider) {
+    public void InitLocalPositionToVisuals(WheelCollider collider) {
         if (collider.transform.childCount == 0) {
             return;
         }
@@ -42,7 +69,6 @@ public class CarController : MonoBehaviour {
         visualWheel.transform.rotation = Quaternion.Euler(90, 0, 90);
     }
 
-
     // finds the corresponding visual wheel
     // correctly applies the transform
     public void ApplyLocalPositionToVisuals(WheelCollider collider) {
@@ -56,12 +82,6 @@ public class CarController : MonoBehaviour {
         Quaternion rotation;
         collider.GetWorldPose(out position, out rotation);
 
-        //visualWheel.transform.position = position;
-        //visualWheel.transform.rotation = Quaternion.Euler(90.0f + transform.rotation.x, 0.0f, 90.0f + transform.rotation.z);
-
-        //visualWheel.transform.rotation = Quaternion.Euler(90.0f + transform.rotation.x, car_root.transform.rotation.y + collider.steerAngle, 90.0f + car_root.transform.rotation.z + collider.steerAngle);
-
-        //visualWheel.transform.localEulerAngles = new Vector3(0.0f, car_root.transform.rotation.y + collider.steerAngle, 90.0f + car_root.transform.rotation.z + collider.steerAngle);
         visualWheel.transform.localEulerAngles = new Vector3(0.0f, car_root.transform.rotation.y + collider.steerAngle, 90.0f);
 
     }
@@ -82,5 +102,6 @@ public class CarController : MonoBehaviour {
                 axleInfo.rightWheel.motorTorque = motor;
             }
         }
+        AntiRollBar();
     }
 }
