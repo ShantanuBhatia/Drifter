@@ -727,15 +727,15 @@ MonoBehaviour:
   axleInfos:
   - leftWheel: {fileID: 146326435720155804}
     rightWheel: {fileID: 146208711578785188}
-    motor: 1
+    motor: 0
     steering: 1
     antiRoll: 300
   - leftWheel: {fileID: 146535628984447984}
     rightWheel: {fileID: 146385818763333860}
     motor: 1
     steering: 0
-    antiRoll: 5000.3
-  maxMotorTorque: 600
+    antiRoll: 100.5
+  maxMotorTorque: 3000
   maxSteeringAngle: 20
   car_root: {fileID: 1985462571077608}
 --- !u!124 &124673806426161482
@@ -794,7 +794,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.4
-  m_Height: 2
+  m_Height: 0.9
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!146 &146208711578785188
@@ -804,7 +804,7 @@ WheelCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1976746653647784}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 500
@@ -833,7 +833,7 @@ WheelCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931540707749940}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 500
@@ -862,7 +862,7 @@ WheelCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1556228744503744}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 500
@@ -882,7 +882,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 0.8
   m_Enabled: 1
 --- !u!146 &146535628984447984
 WheelCollider:
@@ -891,7 +891,7 @@ WheelCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217821968805040}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 500
