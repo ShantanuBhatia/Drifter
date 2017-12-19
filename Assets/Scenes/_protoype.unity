@@ -3520,40 +3520,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 20655527699397512, guid: fccf8c31845788b419516df06c53ce27,
+    - target: {fileID: 146385818763333860, guid: fccf8c31845788b419516df06c53ce27,
         type: 2}
-      propertyPath: m_BackGroundColor.r
-      value: 0.18039216
+      propertyPath: m_ForceAppPointDistance
+      value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 20655527699397512, guid: fccf8c31845788b419516df06c53ce27,
+    - target: {fileID: 146535628984447984, guid: fccf8c31845788b419516df06c53ce27,
         type: 2}
-      propertyPath: m_BackGroundColor.g
-      value: 0.227451
+      propertyPath: m_ForceAppPointDistance
+      value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 20655527699397512, guid: fccf8c31845788b419516df06c53ce27,
+    - target: {fileID: 146326435720155804, guid: fccf8c31845788b419516df06c53ce27,
         type: 2}
-      propertyPath: m_BackGroundColor.b
-      value: 0.2901961
+      propertyPath: m_ForceAppPointDistance
+      value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 20655527699397512, guid: fccf8c31845788b419516df06c53ce27,
+    - target: {fileID: 146208711578785188, guid: fccf8c31845788b419516df06c53ce27,
         type: 2}
-      propertyPath: field of view
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 20655527699397512, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_OcclusionCulling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20655527699397512, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_AllowMSAA
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20655527699397512, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_HDR
-      value: 1
+      propertyPath: m_ForceAppPointDistance
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fccf8c31845788b419516df06c53ce27, type: 2}

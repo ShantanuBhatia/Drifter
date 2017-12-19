@@ -14,6 +14,7 @@ public class AxleInfo {
 public class CarController : MonoBehaviour {
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
+    public float maxBrakeTorque;
     public float maxSteeringAngle;
     public GameObject car_root;
 
@@ -87,7 +88,10 @@ public class CarController : MonoBehaviour {
     }
 
     public void FixedUpdate() {
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
+        //Debug.Log(transform.GetComponent<Rigidbody>().centerOfMass);
+        Debug.Log(Input.GetAxis("Vertical"));
+        float motor = Input.GetAxis("Vertical") > 0 ? maxMotorTorque * Input.GetAxis("Vertical") : 0.0f;
+        float brake = Input.GetAxis("Vertical") < 0 ? maxBrakeTorque * Input.GetAxis("Vertical") : 0.0f;
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
         foreach (AxleInfo axleInfo in axleInfos) {
@@ -98,6 +102,8 @@ public class CarController : MonoBehaviour {
                 ApplyLocalPositionToVisuals(axleInfo.rightWheel);
             }
             if (axleInfo.motor) {
+                axleInfo.leftWheel.brakeTorque = brake;
+                axleInfo.rightWheel.brakeTorque = brake;
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
