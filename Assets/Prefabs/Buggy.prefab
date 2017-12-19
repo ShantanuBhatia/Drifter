@@ -705,7 +705,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1985462571077608}
   serializedVersion: 2
-  m_Mass: 1500
+  m_Mass: 600
   m_Drag: 0.06
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -753,15 +753,16 @@ MonoBehaviour:
   axleInfos:
   - leftWheel: {fileID: 146326435720155804}
     rightWheel: {fileID: 146208711578785188}
-    motor: 1
+    motor: 0
     steering: 1
     antiRoll: 300
   - leftWheel: {fileID: 146535628984447984}
     rightWheel: {fileID: 146385818763333860}
-    motor: 0
+    motor: 1
     steering: 0
     antiRoll: 3500
-  maxMotorTorque: 1000
+  maxMotorTorque: 800
+  maxBrakeTorque: -2640
   maxSteeringAngle: 20
   car_root: {fileID: 1985462571077608}
 --- !u!114 &114553636923083568
@@ -795,7 +796,7 @@ WheelCollider:
     damper: 500
     targetPosition: 0.5
   m_SuspensionDistance: 1
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.05
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -824,7 +825,7 @@ WheelCollider:
     damper: 500
     targetPosition: 0.5
   m_SuspensionDistance: 1
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.05
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -853,7 +854,7 @@ WheelCollider:
     damper: 500
     targetPosition: 0.5
   m_SuspensionDistance: 1
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.05
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -867,7 +868,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.1
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.9
+    m_Stiffness: 0.92
   m_Enabled: 1
 --- !u!146 &146535628984447984
 WheelCollider:
@@ -882,7 +883,7 @@ WheelCollider:
     damper: 500
     targetPosition: 0.5
   m_SuspensionDistance: 1
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.05
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -896,5 +897,5 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.1
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.9
+    m_Stiffness: 0.92
   m_Enabled: 1

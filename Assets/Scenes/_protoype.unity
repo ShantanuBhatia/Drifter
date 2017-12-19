@@ -3520,25 +3520,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 146385818763333860, guid: fccf8c31845788b419516df06c53ce27,
+    - target: {fileID: 114202726821622962, guid: fccf8c31845788b419516df06c53ce27,
         type: 2}
-      propertyPath: m_ForceAppPointDistance
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 146535628984447984, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_ForceAppPointDistance
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 146326435720155804, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_ForceAppPointDistance
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 146208711578785188, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_ForceAppPointDistance
-      value: 0.05
+      propertyPath: maxMotorTorque
+      value: 800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fccf8c31845788b419516df06c53ce27, type: 2}
