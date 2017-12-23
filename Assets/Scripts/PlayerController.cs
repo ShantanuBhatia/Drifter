@@ -18,7 +18,12 @@ public class PlayerController : MonoBehaviour {
     void OnCollisionEnter(Collision col) {
         //Debug.Log(col.collider.GetComponent<Transform>().parent.name);
         if(col.collider.GetComponent<Transform>().parent.name == "Course") {
-            Debug.Log("Hit a wall!");
+            Debug.Log("Hit a wall! Press R to restart");
+            Time.timeScale = 0;
+            // Show Game Over
+            // Show "Press R to Restart" prompt
+            // Create a GameController script that'll store gamestate and perform resets if needed
+            // Then you can work on making the random 
         }
     }
 }
