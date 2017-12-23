@@ -89,7 +89,7 @@ public class CarController : MonoBehaviour {
 
     public void FixedUpdate() {
         //Debug.Log(transform.GetComponent<Rigidbody>().centerOfMass);
-        Debug.Log(Input.GetAxis("Vertical"));
+        //Debug.Log(Input.GetAxis("Vertical"));
         float motor = Input.GetAxis("Vertical") > 0 ? maxMotorTorque * Input.GetAxis("Vertical") : 0.0f;
         float brake = Input.GetAxis("Vertical") < 0 ? maxBrakeTorque * Input.GetAxis("Vertical") : 0.0f;
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
