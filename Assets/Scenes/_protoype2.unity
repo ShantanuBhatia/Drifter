@@ -5915,33 +5915,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1632616872}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1634854971 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1985462571077608, guid: fccf8c31845788b419516df06c53ce27,
-    type: 2}
-  m_PrefabInternal: {fileID: 1914301260}
---- !u!114 &1634854972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1634854971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d266a4dbe51b1d48ae70704fbc4f2a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1634854975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1634854971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8600543c9a58354d8ab2b155b74b659, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1638705571
 GameObject:
   m_ObjectHideFlags: 0
@@ -7145,58 +7118,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114202726821622962, guid: fccf8c31845788b419516df06c53ce27,
         type: 2}
-      propertyPath: axleInfos.Array.data[1].antiRoll
-      value: 3500
-      objectReference: {fileID: 0}
-    - target: {fileID: 114202726821622962, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: axleInfos.Array.data[1].steering
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 146385818763333860, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_SuspensionDistance
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 146535628984447984, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_SuspensionDistance
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 146326435720155804, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_SuspensionDistance
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 146208711578785188, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: m_SuspensionDistance
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114202726821622962, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
       propertyPath: axleInfos.Array.data[0].motor
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114202726821622962, guid: fccf8c31845788b419516df06c53ce27,
         type: 2}
-      propertyPath: maxMotorTorque
-      value: 4000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114202726821622962, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
       propertyPath: axleInfos.Array.data[1].motor
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114202726821622962, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: axleInfos.Array.data[0].steering
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114202726821622962, guid: fccf8c31845788b419516df06c53ce27,
-        type: 2}
-      propertyPath: maxBrakeTorque
-      value: -4200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fccf8c31845788b419516df06c53ce27, type: 2}

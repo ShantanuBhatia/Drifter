@@ -251,6 +251,8 @@ GameObject:
   - component: {fileID: 4955030027297854}
   - component: {fileID: 54558883721873658}
   - component: {fileID: 114202726821622962}
+  - component: {fileID: 114406602491434114}
+  - component: {fileID: 114064187469933470}
   m_Layer: 0
   m_Name: Buggy
   m_TagString: Untagged
@@ -739,6 +741,17 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427727397223444}
   m_Enabled: 1
+--- !u!114 &114064187469933470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985462571077608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8600543c9a58354d8ab2b155b74b659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114202726821622962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -753,18 +766,29 @@ MonoBehaviour:
   axleInfos:
   - leftWheel: {fileID: 146326435720155804}
     rightWheel: {fileID: 146208711578785188}
-    motor: 0
+    motor: 1
     steering: 1
     antiRoll: 300
   - leftWheel: {fileID: 146535628984447984}
     rightWheel: {fileID: 146385818763333860}
-    motor: 1
+    motor: 0
     steering: 0
     antiRoll: 3500
-  maxMotorTorque: 800
-  maxBrakeTorque: -2640
+  maxMotorTorque: 4000
+  maxBrakeTorque: -4200
   maxSteeringAngle: 20
   car_root: {fileID: 1985462571077608}
+--- !u!114 &114406602491434114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985462571077608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d266a4dbe51b1d48ae70704fbc4f2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114553636923083568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -795,7 +819,7 @@ WheelCollider:
     spring: 35000
     damper: 500
     targetPosition: 0.5
-  m_SuspensionDistance: 1
+  m_SuspensionDistance: 0.8
   m_ForceAppPointDistance: 0.05
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -824,7 +848,7 @@ WheelCollider:
     spring: 35000
     damper: 500
     targetPosition: 0.5
-  m_SuspensionDistance: 1
+  m_SuspensionDistance: 0.8
   m_ForceAppPointDistance: 0.05
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -853,7 +877,7 @@ WheelCollider:
     spring: 35000
     damper: 500
     targetPosition: 0.5
-  m_SuspensionDistance: 1
+  m_SuspensionDistance: 0.8
   m_ForceAppPointDistance: 0.05
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -882,7 +906,7 @@ WheelCollider:
     spring: 35000
     damper: 500
     targetPosition: 0.5
-  m_SuspensionDistance: 1
+  m_SuspensionDistance: 0.8
   m_ForceAppPointDistance: 0.05
   m_Mass: 20
   m_WheelDampingRate: 0.25
