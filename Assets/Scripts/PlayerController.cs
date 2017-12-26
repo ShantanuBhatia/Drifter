@@ -19,18 +19,19 @@ public class PlayerController : MonoBehaviour {
 
 
     void OnCollisionEnter(Collision col) {
-        //Debug.Log(col.collider.GetComponent<Transform>().parent.name);
+
+        // So far in the prototype, the only objects the thing can collide with and should die from are bollards
+        // And by the messy construction of the prototype course, all bollards are children of a Course GObject
+        // Hit a child of Course, you lose.
+        // TODO: update this to work with the generated levels once infinite level generation is a thing
         if(col.collider.GetComponent<Transform>().parent.name == "Course") {
             inPlay = false;
             Debug.Log("Hit a wall! Press R to restart");
             Time.timeScale = 0;
-            // Show Game Over
-            // Show "Press R to Restart" prompt
-            // Create a GameController script that'll store gamestate and perform resets if needed
-            // Then you can work on making the random 
         }
     }
 
+    // Getter function so that DriftController can see how the game's doing
     public bool getInPlay() {
         return inPlay;
     }
