@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
+using System.Reflection;
+
 
 public class GameController : MonoBehaviour {
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +24,13 @@ public class GameController : MonoBehaviour {
             }
         }
 	}
+
+    public static void ClearLogConsole() {
+        Assembly assembly = Assembly.GetAssembly(typeof(SceneView));
+        System.Type logEntries = assembly.GetType("UnityEditorInternal.LogEntries");
+        MethodInfo clearConsoleMethod = logEntries.GetMethod("Clear");
+        clearConsoleMethod.Invoke(new object(), null);
+    }
 
     IEnumerator restartGame() {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0);
